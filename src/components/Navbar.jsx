@@ -57,8 +57,6 @@ function Navbar() {
                     <Link to="/blogs" onClick={() => setIsMenuOpen(false)}>All Blogs</Link>
                     <Link to="/create" onClick={() => setIsMenuOpen(false)}>Create Blog</Link>
                     <Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
-                    <a href="https://github.com/Deepali025" target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', fontWeight: 'bold' }}>👤 GitHub</a>
-                    <a href="https://blog-advanced.vercel.app" target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', fontWeight: 'bold' }}>🚀 Live Demo</a>
                 </div>
 
                 {/* Dark mode toggle button - Always visible or moved to menu? 
