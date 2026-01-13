@@ -17,6 +17,8 @@ import { useState } from "react";
 function Navbar() {
     // Dark mode state
     const [dark, setDark] = useState(false);
+    // Mobile menu state
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     /**
      * Toggle between dark and light themes
@@ -27,22 +29,46 @@ function Navbar() {
         document.body.className = dark ? "light" : "dark";
     };
 
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <nav>
-            {/* Site logo/brand */}
-            <h2>TechGlaz Lab</h2>
+            <div className="nav-container">
+                {/* Site logo/brand */}
+                <h2>TechGlaz Lab</h2>
 
-            {/* Navigation links */}
-            <Link to="/">Home</Link>
-            <Link to="/blogs">All Blogs</Link>
-            <Link to="/create">Create Blog</Link>
-            <Link to="/about">About</Link>
-            <a href="https://github.com/Deepali025" target="_blank" rel="noopener noreferrer">GitHub</a>
+                {/* Mobile Menu Button */}
+                <button
+                    className="mobile-menu-btn"
+                    onClick={toggleMenu}
+                    aria-label="Toggle navigation menu"
+                >
+                    {isMenuOpen ? "✕" : "☰"}
+                </button>
 
-            {/* Dark mode toggle button */}
-            <button onClick={toggleTheme}>
-                {dark ? "Light Mode" : "Dark Mode"}
-            </button>
+                {/* Navigation links */}
+                <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+                    <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+                    <Link to="/blogs" onClick={() => setIsMenuOpen(false)}>All Blogs</Link>
+                    <Link to="/create" onClick={() => setIsMenuOpen(false)}>Create Blog</Link>
+                    <Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
+                    <a href="https://github.com/Deepali025" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+
+                {/* Dark mode toggle button - Always visible or moved to menu? 
+                    Let's keep it separately or inside menu. 
+                    Actually, usually it's better to be always visible or inside the menu on mobile.
+                    Let's keep it outside the nav-links div for desktop, but maybe hide on mobile and put inside?
+                    Or just keep it next to hamburger.
+                */}
+                <div className="theme-toggle">
+                    <button onClick={toggleTheme}>
+                        {dark ? "Light Mode" : "Dark Mode"}
+                    </button>
+                </div>
+            </div>
         </nav>
     );
 }

@@ -32,19 +32,25 @@ body {
 }
 
 /* ===== NAVBAR ===== */
+/* ===== NAVBAR ===== */
 nav {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   padding: 16px 40px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--border);
   transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 nav h2 {
@@ -55,8 +61,24 @@ nav h2 {
   background-clip: text;
   font-size: 28px;
   font-weight: 800;
-  margin-right: auto;
   letter-spacing: -0.5px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  /* Hidden on desktop */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-dark);
+  padding: 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 nav a {
@@ -92,7 +114,7 @@ nav a:hover::after {
   width: 60%;
 }
 
-nav button {
+.theme-toggle button {
   padding: 10px 20px;
   border: 2px solid var(--primary);
   background: transparent;
@@ -103,9 +125,10 @@ nav button {
   font-size: 14px;
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
+  box-shadow: none;
 }
 
-nav button:hover {
+.theme-toggle button:hover {
   background: var(--primary);
   color: white;
   transform: translateY(-2px);
@@ -187,7 +210,7 @@ h2 {
 /* ===== BLOG GRID ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 32px;
   margin-top: 32px;
   padding: 0;
@@ -464,19 +487,65 @@ body.dark select:focus {
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   nav {
     padding: 12px 20px;
-    gap: 12px;
+  }
+
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    z-index: 102;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: var(--bg-white);
+    flex-direction: column;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 101;
+    gap: 16px;
+    opacity: 0;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .theme-toggle {
+    /* display: none; Removed so it stays visible */
+  }
+
+  /* Force theme toggle to be visible if we want, or hide and put duplication inside menu. 
+     For now, let's just make sure it fits. */
+  .theme-toggle button {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 
   nav h2 {
-    font-size: 22px;
-  }
-
-  nav a {
-    font-size: 14px;
-    padding: 6px 12px;
+    font-size: 20px;
   }
 
   .hero {
@@ -484,7 +553,7 @@ body.dark select:focus {
   }
 
   .hero h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   .hero p {
