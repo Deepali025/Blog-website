@@ -11,13 +11,30 @@
  * - Shows blog image, title, description
  * - Displays category badge
  * - Shows first 3 tags with overflow indicator
- * - Displays like and comment counts
+ * - Displays clickable like and comment counts
  * - Links to full blog details page
  */
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { toggleLike, hasUserLiked } from "../utils/localStorage";
 
 function BlogCard({ blog }) {
+    // Local state for likes to provide immediate feedback
+    const [liked, setLiked] = useState(hasUserLiked(blog.id));
+    const [likesCount, setLikesCount] = useState(blog.likes || 0);
+
+    /**
+     * Handle like button click
+     * Toggles like status in localStorage and updates local state
+     */
+    const handleLikeClick = (e) => {
+        e.preventDefault();
+        const newLikedState = toggleLike(blog.id);
+        setLiked(newLikedState);
+        setLikesCount(prev => newLikedState ? prev + 1 : Math.max(0, prev - 1));
+    };
+
     return (
         <div className="card">
             {/* Blog featured image */}
@@ -70,7 +87,7 @@ function BlogCard({ blog }) {
                     </div>
                 )}
 
-                {/* Engagement metrics - likes and comments */}
+                {/* Engagement metrics - clickable likes and comments */}
                 <div style={{
                     display: 'flex',
                     gap: '16px',
@@ -79,13 +96,49 @@ function BlogCard({ blog }) {
                     fontSize: '14px',
                     color: 'var(--text-gray)'
                 }}>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                        ❤️ {blog.likes || 0}
-                    </span>
+                    {/* Clickable Like Button */}
+                    <button
+                        onClick={handleLikeClick}
+                        style={{
+                            background: 'transparent',
+                            border: 'none',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            color: liked ? '#ef4444' : 'var(--text-gray)',
+                            fontSize: '14px',
+                            padding: '4px 8px',
+                            borderRadius: '8px',
+                            transition: 'all 0.2s ease',
+                            marginLeft: '-8px' // Align with text
+                        }}
+                        className="card-like-btn"
+                        title={liked ? "Unlike" : "Like"}
+                    >
+                        {liked ? '❤️' : '🤍'} {likesCount}
+                    </button>
+
                     <span>•</span>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+
+                    {/* Clickable Comment Count - Links to details page */}
+                    <Link
+                        to={`/blogs/${blog.id}#comments`}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            textDecoration: 'none',
+                            color: 'var(--text-gray)',
+                            padding: '4px 8px',
+                            borderRadius: '8px',
+                            transition: 'all 0.2s ease'
+                        }}
+                        className="card-comment-link"
+                        title="View comments"
+                    >
                         💬 {blog.comments?.length || 0}
-                    </span>
+                    </Link>
                 </div>
 
                 {/* Author and date metadata */}

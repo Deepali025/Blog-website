@@ -11,7 +11,7 @@ function BlogDetails() {
 
     useEffect(() => {
         const blogs = getBlogs();
-        const foundBlog = blogs.find(b => b.id === id);
+        const foundBlog = blogs.find(b => String(b.id) === id);
         setBlog(foundBlog);
         setLiked(hasUserLiked(id));
 
@@ -23,6 +23,16 @@ function BlogDetails() {
                 metaDescription.setAttribute("content", foundBlog.description || foundBlog.content.substring(0, 155));
             }
         }
+
+        // Handle scroll to comments if URL hash is present
+        if (window.location.hash === '#comments') {
+            setTimeout(() => {
+                const element = document.getElementById('comments');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 500);
+        }
     }, [id]);
 
     const handleLike = () => {
@@ -31,7 +41,7 @@ function BlogDetails() {
 
         // Refresh blog data
         const blogs = getBlogs();
-        const updatedBlog = blogs.find(b => b.id === id);
+        const updatedBlog = blogs.find(b => String(b.id) === id);
         setBlog(updatedBlog);
     };
 
@@ -50,7 +60,7 @@ function BlogDetails() {
 
         // Refresh blog data
         const blogs = getBlogs();
-        const updatedBlog = blogs.find(b => b.id === id);
+        const updatedBlog = blogs.find(b => String(b.id) === id);
         setBlog(updatedBlog);
 
         // Clear form
@@ -64,7 +74,7 @@ function BlogDetails() {
 
             // Refresh blog data
             const blogs = getBlogs();
-            const updatedBlog = blogs.find(b => b.id === id);
+            const updatedBlog = blogs.find(b => String(b.id) === id);
             setBlog(updatedBlog);
         }
     };
@@ -141,7 +151,7 @@ function BlogDetails() {
                 alignItems: 'center',
                 flexWrap: 'wrap'
             }}>
-                <span>✍️ {blog.author}</span>
+                <span>✍️ <a href="https://github.com/Deepali025" target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: '600' }}>{blog.author}</a></span>
                 <span>•</span>
                 <span>📅 {blog.date}</span>
                 <span>•</span>
@@ -216,7 +226,7 @@ function BlogDetails() {
             </div>
 
             {/* Comments Section */}
-            <div className="comments-section" style={{
+            <div id="comments" className="comments-section" style={{
                 background: 'var(--bg-white)',
                 padding: '32px',
                 borderRadius: '20px',

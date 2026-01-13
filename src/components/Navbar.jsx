@@ -37,7 +37,10 @@ function Navbar() {
         <nav>
             <div className="nav-container">
                 {/* Site logo/brand */}
-                <h2>TechGlaz Lab</h2>
+                {/* Site logo/brand - Clickable Link to Home */}
+                <Link to="/" style={{ textDecoration: 'none' }}>
+                    <h2>TechGlaz Lab</h2>
+                </Link>
 
                 {/* Mobile Menu Button */}
                 <button
@@ -54,7 +57,8 @@ function Navbar() {
                     <Link to="/blogs" onClick={() => setIsMenuOpen(false)}>All Blogs</Link>
                     <Link to="/create" onClick={() => setIsMenuOpen(false)}>Create Blog</Link>
                     <Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
-                    <a href="https://github.com/Deepali025" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/Deepali025" target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', fontWeight: 'bold' }}>👤 GitHub</a>
+                    <a href="https://blog-advanced.vercel.app" target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', fontWeight: 'bold' }}>🚀 Live Demo</a>
                 </div>
 
                 {/* Dark mode toggle button - Always visible or moved to menu? 
