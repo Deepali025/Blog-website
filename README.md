@@ -28,7 +28,7 @@ A modern, feature-rich personal blog website built with ReactJS and localStorage
 
 ## 🚀 Live Demo
 
-Visit the live demo: [Add your deployment URL here]
+Visit the live demo: [https://blog-advanced.vercel.app](https://blog-advanced.vercel.app)
 
 ## 📸 Screenshots
 
@@ -56,7 +56,7 @@ Visit the live demo: [Add your deployment URL here]
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Deepali025/blog-website.git
+   git clone https://github.com/Deepali025/Blog-website.git
    cd blog-website
    ```
 
