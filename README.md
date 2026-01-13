@@ -56,7 +56,7 @@ Visit the live demo: [Add your deployment URL here]
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/blog-website.git
+   git clone https://github.com/Deepali025/blog-website.git
    cd blog-website
    ```
 
