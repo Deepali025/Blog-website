@@ -9,12 +9,8 @@ function About() {
         <div className="page-container" style={{ maxWidth: '800px' }}>
             <h2 className="text-center">📖 About TechGlaz Lab</h2>
 
-            <div className="card-content" style={{
-                background: 'var(--bg-white)',
+            <div className="card card-content" style={{
                 padding: 'min(40px, 6vw)',
-                borderRadius: '24px',
-                boxShadow: 'var(--shadow-lg)',
-                border: '1px solid var(--border)'
             }}>
                 <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '24px' }}>
                     Welcome to <strong>TechGlaz Lab</strong> – a personal blog where creativity meets knowledge.

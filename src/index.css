@@ -25,26 +25,44 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg-light);
+  background-color: var(--bg-light);
+  background-image: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+  background-attachment: fixed;
   color: var(--text-dark);
   line-height: 1.6;
   transition: background 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+body.light {
+  --bg-light: #f8fafc;
+  background-image: radial-gradient(at 0% 0%, hsla(253, 100%, 95%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 100%, 95%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 100%, 95%, 1) 0, transparent 50%);
 }
 
 /* ===== NAVBAR ===== */
 nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 16px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
+}
+
+body.light nav {
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 nav h2 {
@@ -66,7 +84,7 @@ nav h2 {
 }
 
 nav a {
-  color: var(--text-dark);
+  color: #e2e8f0;
   text-decoration: none;
   font-weight: 500;
   font-size: 15px;
@@ -74,6 +92,10 @@ nav a {
   border-radius: 8px;
   transition: all 0.2s ease;
   position: relative;
+}
+
+body.light nav a {
+  color: var(--text-dark);
 }
 
 nav a:hover {
@@ -122,43 +144,44 @@ nav a:hover {
 
 /* ===== HERO SECTION ===== */
 .hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-  color: white;
-  padding: 120px 20px;
+  padding: 160px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.3;
+  background: transparent;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 72px;
+  font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 800;
   margin-bottom: 24px;
   letter-spacing: -2px;
   position: relative;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: fadeInUp 0.8s ease;
 }
 
+body.light .hero h1 {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .hero p {
-  font-size: 22px;
-  font-weight: 300;
-  max-width: 700px;
+  font-size: clamp(1rem, 4vw, 1.4rem);
+  font-weight: 400;
+  max-width: 800px;
   margin: 0 auto;
-  opacity: 0.95;
+  color: #94a3b8;
   position: relative;
   animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+body.light .hero p {
+  color: var(--text-gray);
 }
 
 @keyframes fadeInUp {
@@ -203,15 +226,23 @@ h2 {
 
 /* ===== BLOG CARD ===== */
 .card {
-  background: var(--bg-white);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0;
   display: flex;
   flex-direction: column;
+}
+
+body.light .card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
 .card:hover {
@@ -295,11 +326,18 @@ h2 {
 form {
   max-width: 650px;
   margin: 40px auto;
-  background: var(--bg-white);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
   padding: 48px;
-  border-radius: 24px;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border);
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.light form {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
 input,
@@ -309,12 +347,19 @@ select {
   padding: 14px 18px;
   margin-bottom: 20px;
   border-radius: 12px;
-  border: 2px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   transition: all 0.3s ease;
-  background: var(--bg-white);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text-dark);
+}
+
+body.light input,
+body.light textarea,
+body.light select {
+  background: white;
+  border: 1px solid var(--border);
 }
 
 select {
@@ -383,20 +428,29 @@ button:hover {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #0f172a;
-  color: white;
-  padding: 80px 40px 40px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #94a3b8;
+  padding: 60px 40px;
   margin-top: 100px;
-  border-top: 4px solid var(--primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+body.light .footer {
+  background: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  color: var(--text-gray);
 }
 
 /* ===== DARK MODE ===== */
 body.dark {
-  --bg-light: #020617;
+  --bg-light: #030712;
   --bg-white: #0f172a;
   --text-dark: #f8fafc;
   --text-gray: #94a3b8;
-  --border: #1e293b;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 body.dark nav {
@@ -493,6 +547,16 @@ body.dark select option {
 .single-post {
   max-width: 900px !important;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.light .single-post {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .post-header {

@@ -88,6 +88,48 @@ const blogData = [
         likes: 0,
         comments: [],
         tags: ["javascript", "coding", "webdev", "advanced"]
+    },
+    {
+        id: "6",
+        title: "The Art of Travel",
+        description: "How exploring new places broadens your mind",
+        content:
+            "Traveling is not just about visiting new places; it's about experiencing different cultures, meeting new people, and stepping outside your comfort zone. It teaches you resilience and adaptability.",
+        category: "Lifestyle",
+        author: "Deepali",
+        date: "16 Jan 2026",
+        image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=600&h=300&auto=format&fit=crop",
+        likes: 0,
+        comments: [],
+        tags: ["travel", "adventure", "culture", "lifestyle"]
+    },
+    {
+        id: "7",
+        title: "Sustainable Living",
+        description: "Small changes for a greener planet",
+        content:
+            "Sustainability starts at home. By reducing plastic waste, saving energy, and choosing eco-friendly products, we can all contribute to a healthier planet for future generations.",
+        category: "Lifestyle",
+        author: "Deepali",
+        date: "17 Jan 2026",
+        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?q=80&w=600&h=300&auto=format&fit=crop",
+        likes: 0,
+        comments: [],
+        tags: ["sustainability", "eco-friendly", "environment", "green"]
+    },
+    {
+        id: "8",
+        title: "Modern UI Design",
+        description: "Visual aesthetics in the digital age",
+        content:
+            "A successful UI is more than just pretty colors. It's about hierarchy, focus, and creating an intuitive journey for the user through clear visual cues and consistent design patterns.",
+        category: "Tech",
+        author: "Deepali",
+        date: "18 Jan 2026",
+        image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=600&h=300&auto=format&fit=crop",
+        likes: 0,
+        comments: [],
+        tags: ["UI", "UX", "design", "aesthetics"]
     }
 ];
 
