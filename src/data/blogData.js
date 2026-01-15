@@ -1,191 +1,113 @@
 /**
- * blogData.js - Sample Blog Data
+ * blogData.js - Curated Interesting Blog Data
  * 
- * This file contains the initial sample blog posts that are loaded
- * into localStorage when the application first runs.
- * 
- * Each blog object contains:
- * - id: Unique identifier
- * - title: Blog post title
- * - description: Short summary
- * - content: Full blog content
- * - category: Tech, Lifestyle, or Education
- * - author: Author name
- * - date: Publication date
- * - image: Image URL or base64 string
- * - likes: Number of likes (initialized to 0)
- * - comments: Array of comment objects (initialized empty)
- * - tags: Array of searchable tags
+ * Replaced personal/placeholder blogs with engaging "Top Tier" content.
  */
 
 const blogData = [
     {
         id: "1",
-        title: "Introduction to React",
-        description: "Basics of ReactJS for beginners",
-        content:
-            "React is a JavaScript library used to build fast and interactive user interfaces.",
+        title: "The Silent Rise of Neuralink",
+        description: "How brain-machine interfaces are moving from sci-fi to clinical trials.",
+        content: "Elon Musk's Neuralink has recently reached significant milestones in human clinical trials. This technology aims to bridge the gap between human biological intelligence and artificial intelligence, potentially curing paralysis and blindness along the way. However, the ethical implications of 'hacking' the human brain remain a subject of intense global debate.",
         category: "Tech",
-        author: "Deepali",
+        author: "Tech Explorer",
         date: "10 Jan 2026",
-        image: "https://via.placeholder.com/600x300",
-        likes: 0,
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?q=80&w=800&h=400&auto=format&fit=crop",
+        likes: 124,
         comments: [],
-        tags: ["react", "javascript", "frontend", "web development"]
+        tags: ["biotech", "future", "AI", "neuralink"]
     },
     {
         id: "2",
-        title: "Healthy Lifestyle",
-        description: "Simple habits for a healthy life",
-        content:
-            "Healthy lifestyle includes good food, exercise and positive thinking. Research shows that maintaining a balanced diet and regular physical activity can significantly improve overall well-being and longevity.",
+        title: "The Psychology of Color in Your Home",
+        description: "How your wall paint and lightning affect your daily productivity.",
+        content: "Did you know that blue light can suppress melatonin, helping you stay alert, while soft green tones are proven to reduce heart rate and stress? Choosing the right palette for your home office or bedroom isn't just about aesthetics—it's about engineering your environment for mental well-being.",
         category: "Lifestyle",
-        author: "Deepali",
+        author: "Wellness Guide",
         date: "12 Jan 2026",
-        image: "https://images.unsplash.com/photo-1545208393-2160295eb69e?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
+        image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&h=400&auto=format&fit=crop",
+        likes: 89,
         comments: [],
-        tags: ["health", "wellness", "fitness", "lifestyle"]
+        tags: ["interiordesign", "wellness", "psychology", "lifestyle"]
     },
     {
         id: "3",
-        title: "The Future of AI",
-        description: "Exploring the impact of Artificial Intelligence",
-        content:
-            "Artificial Intelligence is transforming how we work and live. From automated assistants to complex data analysis, the potential for AI to drive innovation is immense. However, it also brings significant ethical considerations that must be addressed.",
+        title: "Web3: Beyond the Hype",
+        description: "Understanding decentralization without the crypto volatility.",
+        content: "Web3 is often conflated with Bitcoin, but its real power lies in decentralized identity and data ownership. We explore how blockchain protocols are being used to create censorshop-resistant social media and verifiable digital credentials for the next generation of the internet.",
         category: "Tech",
-        author: "Deepali",
+        author: "Digital Nomad",
         date: "14 Jan 2026",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
+        image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=800&h=400&auto=format&fit=crop",
+        likes: 210,
         comments: [],
-        tags: ["AI", "technology", "future", "innovation"]
+        tags: ["web3", "blockchain", "decentralization", "tech"]
     },
     {
         id: "4",
-        title: "Learning Made Easy",
-        description: "Tips for effective online learning",
-        content:
-            "Online education has opened doors for millions. To make the most of it, one needs disciplined study habits, a dedicated workspace, and the right digital tools to stay organized and engaged.",
-        category: "Education",
-        author: "Deepali",
+        title: "Mastering the Flow State",
+        description: "How to achieve deep work in a world full of notifications.",
+        content: "Flow state is that moment where time disappears and your productivity peaks. Achieving it requires a delicate balance between the challenge level of a task and your current skill set. We discuss techniques like 'Time Boxing' and 'Monk Mode' to help you enter the zone consistently.",
+        category: "Lifestyle",
+        author: "Peak Performer",
         date: "15 Jan 2026",
-        image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
+        image: "https://images.unsplash.com/photo-1499209974431-9dac3adaf471?q=80&w=800&h=400&auto=format&fit=crop",
+        likes: 156,
         comments: [],
-        tags: ["education", "learning", "study", "online"]
+        tags: ["productivity", "mindset", "focus", "lifestyle"]
     },
     {
         id: "5",
-        title: "Mastering JavaScript",
-        description: "Deep dive into advanced JS concepts",
-        content:
-            "JavaScript is the backbone of modern web development. Understanding closures, prototypes, and asynchronous programming is crucial for any developer looking to build robust and efficient applications.",
+        title: "Edge Computing: The End of Latency",
+        description: "Why data processing is moving from the cloud to your local device.",
+        content: "As IoT devices proliferate, sending data back to centralized servers is becoming too slow. Edge computing brings processing power directly to the 'edge' of the network—near the user. This is crucial for autonomous vehicles and real-time medical monitoring where milliseconds matter.",
         category: "Tech",
-        author: "Deepali",
+        author: "System Architect",
         date: "15 Jan 2026",
-        image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800&h=400&auto=format&fit=crop",
+        likes: 74,
         comments: [],
-        tags: ["javascript", "coding", "webdev", "advanced"]
+        tags: ["infrastructure", "edge", "iot", "tech"]
     },
     {
         id: "6",
-        title: "The Art of Travel",
-        description: "How exploring new places broadens your mind",
-        content:
-            "Traveling is not just about visiting new places; it's about experiencing different cultures, meeting new people, and stepping outside your comfort zone. It teaches you resilience and adaptability.",
+        title: "The Slow Coffee Movement",
+        description: "Why taking 15 minutes to brew your morning cup is the ultimate self-care.",
+        content: "In an era of instant coffee and fast-paced living, the 'slow coffee' movement encourages patience and sensory awareness. From choosing ethically sourced beans to mastering the pour-over technique, we explore why this ritual is capturing the hearts of millions worldwide.",
         category: "Lifestyle",
-        author: "Deepali",
+        author: "Barista Soul",
         date: "16 Jan 2026",
-        image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
+        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&h=400&auto=format&fit=crop",
+        likes: 312,
         comments: [],
-        tags: ["travel", "adventure", "culture", "lifestyle"]
+        tags: ["coffee", "ritual", "slowliving", "lifestyle"]
     },
     {
         id: "7",
-        title: "Sustainable Living",
-        description: "Small changes for a greener planet",
-        content:
-            "Sustainability starts at home. By reducing plastic waste, saving energy, and choosing eco-friendly products, we can all contribute to a healthier planet for future generations.",
-        category: "Lifestyle",
-        author: "Deepali",
+        title: "Cybersecurity in 2026",
+        description: "The new frontline of AI-powered social engineering attacks.",
+        content: "Hackers are now using Deepfake voice and video to bypass multi-factor authentication. Staying safe online requires a new level of digital hygiene, including hardware keys and a healthy skepticism of 'urgent' requests, even from familiar faces.",
+        category: "Tech",
+        author: "Securtiy Pro",
         date: "17 Jan 2026",
-        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
+        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&h=400&auto=format&fit=crop",
+        likes: 198,
         comments: [],
-        tags: ["sustainability", "eco-friendly", "environment", "green"]
+        tags: ["security", "privacy", "cyber", "tech"]
     },
     {
         id: "8",
-        title: "Modern UI Design",
-        description: "Visual aesthetics in the digital age",
-        content:
-            "A successful UI is more than just pretty colors. It's about hierarchy, focus, and creating an intuitive journey for the user through clear visual cues and consistent design patterns.",
-        category: "Tech",
-        author: "Deepali",
+        title: "The Architecture of Happiness",
+        description: "How biophilic design is transforming urban apartments.",
+        content: "Biophilic design integrates natural elements—like light, plants, and water—into modern architecture. This approach has been shown to improve mental health, air quality, and overall mood, proving that we thrive best when connected to the natural world, even in concrete jungles.",
+        category: "Lifestyle",
+        author: "Urban Dreamer",
         date: "18 Jan 2026",
-        image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
+        image: "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?q=80&w=800&h=400&auto=format&fit=crop",
+        likes: 245,
         comments: [],
-        tags: ["UI", "UX", "design", "aesthetics"]
-    },
-    {
-        id: "9",
-        title: "The Rise of Quantum Computing",
-        description: "How quantum physics is changing the digital world",
-        content:
-            "Quantum computing represents a paradigm shift in processing power. Unlike classical bits, qubits can exist in multiple states simultaneously, allowing for calculations that were previously impossible.",
-        category: "Tech",
-        author: "Deepali",
-        date: "19 Jan 2026",
-        image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
-        comments: [],
-        tags: ["quantum", "tech", "computing", "future"]
-    },
-    {
-        id: "10",
-        title: "Digital Minimalism",
-        description: "Finding peace in a hyper-connected world",
-        content:
-            "Digital minimalism isn't about avoiding technology; it's about using it intentionally. By decluttering our digital lives, we can reclaim our time and focus for things that truly matter.",
-        category: "Lifestyle",
-        author: "Deepali",
-        date: "20 Jan 2026",
-        image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
-        comments: [],
-        tags: ["minimalism", "lifestyle", "digital-wellbeing", "focus"]
-    },
-    {
-        id: "11",
-        title: "Cloud Infrastructure 101",
-        description: "Understanding the backbone of the modern web",
-        content:
-            "Cloud computing has democratized access to high-end infrastructure. From AWS to Azure, understanding how to scale applications in the cloud is a vital skill for modern engineers.",
-        category: "Tech",
-        author: "Deepali",
-        date: "21 Jan 2026",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
-        comments: [],
-        tags: ["cloud", "devops", "tech", "infrastructure"]
-    },
-    {
-        id: "12",
-        title: "Mindful Morning Rituals",
-        description: "Starting your day with intention and energy",
-        content:
-            "Your morning sets the tone for the rest of your day. Incorporating rituals like meditation, light movement, and a nourishing breakfast can transform your productivity and mood.",
-        category: "Lifestyle",
-        author: "Deepali",
-        date: "22 Jan 2026",
-        image: "https://images.unsplash.com/photo-1499728603263-13726abce5fd?q=80&w=600&h=300&auto=format&fit=crop",
-        likes: 0,
-        comments: [],
-        tags: ["mindfulness", "habits", "lifestyle", "wellness"]
+        tags: ["architecture", "nature", "design", "lifestyle"]
     }
 ];
 
