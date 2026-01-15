@@ -130,6 +130,62 @@ const blogData = [
         likes: 0,
         comments: [],
         tags: ["UI", "UX", "design", "aesthetics"]
+    },
+    {
+        id: "9",
+        title: "The Rise of Quantum Computing",
+        description: "How quantum physics is changing the digital world",
+        content:
+            "Quantum computing represents a paradigm shift in processing power. Unlike classical bits, qubits can exist in multiple states simultaneously, allowing for calculations that were previously impossible.",
+        category: "Tech",
+        author: "Deepali",
+        date: "19 Jan 2026",
+        image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=600&h=300&auto=format&fit=crop",
+        likes: 0,
+        comments: [],
+        tags: ["quantum", "tech", "computing", "future"]
+    },
+    {
+        id: "10",
+        title: "Digital Minimalism",
+        description: "Finding peace in a hyper-connected world",
+        content:
+            "Digital minimalism isn't about avoiding technology; it's about using it intentionally. By decluttering our digital lives, we can reclaim our time and focus for things that truly matter.",
+        category: "Lifestyle",
+        author: "Deepali",
+        date: "20 Jan 2026",
+        image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=600&h=300&auto=format&fit=crop",
+        likes: 0,
+        comments: [],
+        tags: ["minimalism", "lifestyle", "digital-wellbeing", "focus"]
+    },
+    {
+        id: "11",
+        title: "Cloud Infrastructure 101",
+        description: "Understanding the backbone of the modern web",
+        content:
+            "Cloud computing has democratized access to high-end infrastructure. From AWS to Azure, understanding how to scale applications in the cloud is a vital skill for modern engineers.",
+        category: "Tech",
+        author: "Deepali",
+        date: "21 Jan 2026",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&h=300&auto=format&fit=crop",
+        likes: 0,
+        comments: [],
+        tags: ["cloud", "devops", "tech", "infrastructure"]
+    },
+    {
+        id: "12",
+        title: "Mindful Morning Rituals",
+        description: "Starting your day with intention and energy",
+        content:
+            "Your morning sets the tone for the rest of your day. Incorporating rituals like meditation, light movement, and a nourishing breakfast can transform your productivity and mood.",
+        category: "Lifestyle",
+        author: "Deepali",
+        date: "22 Jan 2026",
+        image: "https://images.unsplash.com/photo-1499728603263-13726abce5fd?q=80&w=600&h=300&auto=format&fit=crop",
+        likes: 0,
+        comments: [],
+        tags: ["mindfulness", "habits", "lifestyle", "wellness"]
     }
 ];
 
