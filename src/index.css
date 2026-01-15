@@ -302,6 +302,70 @@ form {
   border: 1px solid var(--border);
 }
 
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: var(--bg-white);
+  color: var(--text-dark);
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 20px;
+  padding-right: 48px;
+  cursor: pointer;
+}
+
+select option {
+  background: var(--bg-white);
+  color: var(--text-dark);
+  padding: 12px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--bg-white);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
 /* ===== SEARCH & FILTER ===== */
 .filters {
   display: flex;
@@ -338,6 +402,23 @@ body.dark {
 body.dark nav {
   background: rgba(15, 23, 42, 0.9);
   border-bottom-color: #1e293b;
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+body.dark select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
+body.dark select option {
+  background: #1e293b;
+  color: #f8fafc;
 }
 
 /* ===== RESPONSIVE ===== */

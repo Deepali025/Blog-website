@@ -26,6 +26,7 @@ function EditBlog() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [content, setContent] = useState("");
+    const [category, setCategory] = useState("");
     const [image, setImage] = useState("");
     const [imagePreview, setImagePreview] = useState("");
     const [tags, setTags] = useState("");
@@ -46,6 +47,7 @@ function EditBlog() {
             setTitle(foundBlog.title);
             setDescription(foundBlog.description);
             setContent(foundBlog.content);
+            setCategory(foundBlog.category);
             setImage(foundBlog.image);
             setImagePreview(foundBlog.image);
             // Convert tags array to comma-separated string for editing
@@ -121,6 +123,7 @@ function EditBlog() {
                 blogToUpdate.title = title;
                 blogToUpdate.description = description;
                 blogToUpdate.content = content;
+                blogToUpdate.category = category;
                 blogToUpdate.image = image;
                 blogToUpdate.tags = tagsArray;
 
@@ -178,6 +181,14 @@ function EditBlog() {
                     placeholder="Short Description"
                     onChange={e => setDescription(e.target.value)}
                 />
+
+                {/* Category Dropdown */}
+                <select value={category} onChange={e => setCategory(e.target.value)}>
+                    <option value="">Select Category</option>
+                    <option value="Tech">💻 Tech</option>
+                    <option value="Lifestyle">🌿 Lifestyle</option>
+                    <option value="Education">📖 Education</option>
+                </select>
 
                 {/* Tags input */}
                 <div style={{ marginBottom: '20px' }}>
