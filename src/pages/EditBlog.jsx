@@ -39,7 +39,7 @@ function EditBlog() {
         document.title = "Edit Blog - TechGlaz Lab";
 
         const blogs = getBlogs();
-        const foundBlog = blogs.find(b => String(b.id) === id);
+        const foundBlog = blogs.find(b => b.id === id);
 
         if (foundBlog) {
             setBlog(foundBlog);
@@ -108,7 +108,7 @@ function EditBlog() {
     const updateBlog = () => {
         if (blog) {
             const blogs = getBlogs();
-            const blogToUpdate = blogs.find(b => String(b.id) === id);
+            const blogToUpdate = blogs.find(b => b.id === id);
 
             if (blogToUpdate) {
                 // Parse tags from comma-separated string to array

@@ -54,8 +54,8 @@ function About() {
                     borderRadius: '16px',
                     textAlign: 'center'
                 }}>
-                    <p style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-dark)' }}>
-                        Made with ❤️ by <a href="https://github.com/Deepali025" target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none' }}>Deepali</a>
+                    <p style={{ fontSize: '16px', fontWeight: '600', color: 'var(--primary)' }}>
+                        Made with ❤️ by Deepali
                     </p>
                 </div>
             </div>
