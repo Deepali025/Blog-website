@@ -16,14 +16,16 @@ import blogData from "../data/blogData";
  * @returns {Array} Array of blog objects
  */
 export const getBlogs = () => {
-    const blogs = localStorage.getItem("blogs");
-    if (blogs) {
-        return JSON.parse(blogs);
-    } else {
-        // Initialize with sample data if localStorage is empty
+    const blogsStr = localStorage.getItem("blogs");
+    const blogs = blogsStr ? JSON.parse(blogsStr) : null;
+
+    // Automatically sync new sample blogs if the local count is less than the current base data
+    // This ensures users always see the latest "Interesting Blogs" I add
+    if (!blogs || blogs.length < blogData.length) {
         localStorage.setItem("blogs", JSON.stringify(blogData));
         return blogData;
     }
+    return blogs;
 };
 
 /**

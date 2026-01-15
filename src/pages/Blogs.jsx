@@ -55,6 +55,8 @@ function Blogs() {
                     <option value="Tech">💻 Tech</option>
                     <option value="Lifestyle">🌿 Lifestyle</option>
                     <option value="Education">📖 Education</option>
+                    <option value="Travel">✈️ Travel</option>
+                    <option value="Wellness">🧘 Wellness</option>
                 </select>
 
                 <select value={selectedTag} onChange={e => setSelectedTag(e.target.value)}>
