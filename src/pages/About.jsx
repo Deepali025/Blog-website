@@ -6,23 +6,23 @@ function About() {
     }, []);
 
     return (
-        <div className="page-container" style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <div className="page-container" style={{ maxWidth: '800px' }}>
             <h2 className="text-center">📖 About TechGlaz Lab</h2>
 
-            <div style={{
+            <div className="card-content" style={{
                 background: 'var(--bg-white)',
-                padding: '40px',
-                borderRadius: '20px',
+                padding: 'min(40px, 6vw)',
+                borderRadius: '24px',
                 boxShadow: 'var(--shadow-lg)',
                 border: '1px solid var(--border)'
             }}>
-                <p style={{ fontSize: '18px', lineHeight: '1.8', marginBottom: '24px' }}>
+                <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '24px' }}>
                     Welcome to <strong>TechGlaz Lab</strong> – a personal blog where creativity meets knowledge.
                     This platform is built to share insights, stories, and experiences across various topics
                     including technology, lifestyle, and education.
                 </p>
 
-                <p style={{ fontSize: '18px', lineHeight: '1.8', marginBottom: '24px' }}>
+                <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '24px' }}>
                     Built with modern web technologies including <strong>React</strong>, <strong>React Router</strong>,
                     and <strong>localStorage</strong> for a seamless, fast, and interactive experience.
                 </p>
@@ -34,10 +34,10 @@ function About() {
                 }}>
                     <h3 style={{ marginBottom: '16px', fontSize: '24px' }}>✨ Features</h3>
                     <ul style={{
-                        fontSize: '16px',
+                        fontSize: '1rem',
                         lineHeight: '2',
                         color: 'var(--text-gray)',
-                        paddingLeft: '24px'
+                        paddingLeft: '20px'
                     }}>
                         <li>Create, edit, and delete blog posts</li>
                         <li>Search and filter by category</li>
@@ -54,7 +54,7 @@ function About() {
                     borderRadius: '16px',
                     textAlign: 'center'
                 }}>
-                    <p style={{ fontSize: '16px', fontWeight: '600', color: 'var(--primary)' }}>
+                    <p style={{ fontSize: '1rem', fontWeight: '600', color: 'var(--primary)' }}>
                         Made with ❤️ by Deepali
                     </p>
                 </div>
